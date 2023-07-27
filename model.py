@@ -3,14 +3,18 @@ import text
 
 pygame.init()
 
-t1 = text.Text(600, 0, "Ваши деньги: ", "#4A310A", 0)
-t2 = text.Text(644, 42, "Цена апгрейда: ", "#FFC122", 10)
+t1 = text.Text(624, 0, "Ваши деньги: ", "#4A310A", 0, "#FFEB87")
+t2 = text.Text(624, 42, "Цена апгрейда: ", "#FFC122", 10, "#F2DBFF")
+t3 = text.Text(624, 86, "Денег за нажатие: ", "#2B9418", 2, "#FF2A2A")
+t4 = text.Text(624, 42, "Прирост за клик: ", "#FFC122", 2, "#F2DBFF", True)
 
-r1 = pygame.Rect([600, 44, 38, 38])
+spisok_text = [t1, t2, t3, t4]
+
+r1 = pygame.Rect([580, 44, 38, 38])
 
 money = 0
 plus = 2
-rost_plus = 0
+rost_plus = 2
 prokachka = 10
 uroven_glav = 1
 
@@ -20,13 +24,16 @@ def money1():
     money += plus
     t1.chislo = money
 
+
 def plus1():
     global plus, rost_plus, prokachka, uroven_glav, money
     if money >= prokachka:
         money -= prokachka
-        rost_plus += 2
         plus += rost_plus
+        rost_plus += 2
         prokachka *= 1.05
         uroven_glav += 1
         t1.chislo = money
         t2.chislo = prokachka
+        t3.chislo = plus
+        t4.chislo = rost_plus
