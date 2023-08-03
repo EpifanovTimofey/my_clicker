@@ -10,19 +10,16 @@ class Text:
         self.color_text = color_text
         self.color_background = color_background
         self.shrift = pygame.font.SysFont("arial", 34, True)
-        self.chislo = chislo
+        self.chislo1 = chislo
         self.levo = levo
         self.x_ri = x_ri
-        self.a = self.shrift.render(self.text + str(int(self.chislo)), True, self.color_text, self.color_background)
+        self.a = self.shrift.render(self.text + str(int(self.chislo1)), True, self.color_text, self.color_background)
+
 
     def draw(self, dis):
         if self.levo:
             self.x = self.x_ri - self.a.get_width()
         dis.blit(self.a, [self.x, self.y])
-
-    def new_chislo(self, chislo):
-        self.a = self.shrift.render(self.text + str(int(chislo)), True, self.color_text, self.color_background)
-        self.chislo = chislo
 
     @property
     def cvet(self):
@@ -41,4 +38,14 @@ class Text:
             self.color_text = [0, 255, 0]
         else:
             print("error")
+
+    @property
+    def chislo(self):
+        return self.chislo1
+
+    @chislo.setter
+    def chislo(self, new):
+        self.a = self.shrift.render(self.text + str(int(new)), True, self.color_text, self.color_background)
+        self.chislo1 = new
+
 
