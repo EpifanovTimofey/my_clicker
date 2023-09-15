@@ -21,23 +21,6 @@ class Text:
             self.x = self.x_ri - self.a.get_width()
         dis.blit(self.a, [self.x, self.y])
 
-    @property
-    def cvet(self):
-        if self.color_text == [255, 0, 0]:
-            return "red"
-        if self.color_text == [0, 255, 0]:
-            return "green"
-        else:
-            return "error"
-
-    @cvet.setter
-    def cvet(self, new):
-        if new == "red":
-            self.color_text = [255, 0, 0]
-        if new == "green":
-            self.color_text = [0, 255, 0]
-        else:
-            print("error")
 
     @property
     def chislo(self):
