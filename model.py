@@ -19,18 +19,33 @@ def plus1():
 
 
 def worker2_inv_off():
-    lvl_worker2.chislo += 1
+    global w2_prokachka
+    if money.chislo >= prokachka_w2.chislo:
+        lvl_worker2.chislo += 1
+        money.chislo -= prokachka_w2.chislo
+        prokachka_w2.chislo *= w2_prokachka
+        w2_prokachka += w2_plus
+        clock.chislo += clock_w2_plus.chislo
+        clock_w2_plus.chislo += 2
 
 
-lvl_worker2 = text.Text(700, 300, "Уровень: ", "#168FFF", 0, "#FEFF55")
-money = text.Text(624, 0, "Ваши деньги: ", "#4A310A", 0, "#FFEB87")
+def pass_plus():
+    money.chislo += clock.chislo
+
+
+lvl_main = text.Text(100, 440, "Уровень: ", "#3227FF", 1, "#FFDC3A")
+lvl_worker2 = text.Text(610, 340, "Уровень: ", "#168FFF", 0, "#FEFF55")
+money = text.Text(624, 0, "Ваши деньги: ", "#4A310A", 10000000, "#FFEB87")
 prokachka = text.Text(624, 42, "Цена апгрейда: ", "#FFC122", 10, "#F2DBFF")
+prokachka_w2 = text.Text(610, 580, "Цена прокачки: ", "#4A310A", 10000, "#FFEB87")
 plus = text.Text(624, 86, "Денег за нажатие: ", "#2B9418", 2, "#FF2A2A")
 rost_plus = text.Text(624, 42, "Прирост за клик: ", "#FFC122", 2, "#F2DBFF", True, 574)
+clock_w2_plus = text.Text(610, 622, "Прирост за апгрейд: ", "#3227FF", 2, "#FFDC3A")
 clock = text.Text(624, 132, "Денег в секунду: ", "#3227FF", 0, "#FFDC3A")
-lvl_main = text.Text(100, 440, "Уровень: ", "#3227FF", 1, "#FFDC3A")
 yellow_knopka = knopka.Knopka("sprites/controls/up_yellow.png", 38, 38, 580, 44, plus1)
 green_knopka = knopka.Knopka("sprites/controls/up_green.png", 38, 38, 560, 580, worker2_inv_off)
 
+spisok_text = [money, prokachka, plus, rost_plus, clock, lvl_main, lvl_worker2, prokachka_w2, clock_w2_plus]
 
-spisok_text = [money, prokachka, plus, rost_plus, clock, lvl_main, lvl_worker2]
+w2_prokachka = 1.02
+w2_plus = 0.02283
