@@ -1,5 +1,4 @@
 import time
-
 import model
 import view
 import control

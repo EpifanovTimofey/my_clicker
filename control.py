@@ -1,4 +1,6 @@
 import pygame, model
+a = pygame.event.custom_type()
+pygame.time.set_timer(a, 1000)
 
 
 def p():
@@ -11,3 +13,5 @@ def p():
         if f.type == pygame.MOUSEBUTTONDOWN:
             if f.button == pygame.BUTTON_LEFT:
                 model.money1()
+        if f.type == a:
+            model.pass_plus()
