@@ -58,8 +58,8 @@ clock = text.Text(624, 132, "Денег в секунду: ", "#3227FF", 0, "#FF
 bonus = text.Text(610, 664, "Бонус за клик: +", "#168FFF", 20, "#FEFF55", text2="% ")
 yellow_knopka = knopka.Knopka("sprites/controls/up_yellow.png", 38, 38, 580, 44, plus1)
 green_knopka = knopka.Knopka("sprites/controls/up_green.png", 38, 38, 560, 580, prockachka_w2_def)
-a = workers.Worker("sprites/worker/worker3.png", [900, 600], [200, 200], "sprites/worker/worker3_inv.png")
+worker3 = workers.Worker("sprites/worker/worker3.png", [1000, 600], [200, 200], "sprites/worker/worker3_inv.png", 50000,
+                         30, 5, money)
 
-spisok_text = [money, prokachka, plus, rost_plus, clock, lvl_main, lvl_worker2, prokachka_w2, clock_w2_plus, plus_and_procent]
-
-
+spisok_text = [money, prokachka, plus, rost_plus, clock, lvl_main, lvl_worker2, prokachka_w2, clock_w2_plus,
+               plus_and_procent]

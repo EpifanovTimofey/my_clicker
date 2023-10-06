@@ -12,7 +12,7 @@ obvodka_worker2 = pictures.Picture("sprites/worker/worker2_inv.png", [730 / 2.5,
 worker2 = pictures.Picture("sprites/worker/worker2.png", [730 / 2.5, 1330 / 2.5], [400, 830 - 1330 / 2.5])
 pygame.init()
 
-spisok_pictures = [place, worker_main, plus, coin, model.yellow_knopka, clock, model.green_knopka, model.a]
+spisok_pictures = [place, worker_main, plus, coin, model.yellow_knopka, clock, model.green_knopka, model.worker3]
 
 
 def main_view():
