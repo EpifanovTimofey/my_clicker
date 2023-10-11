@@ -12,17 +12,13 @@ obvodka_worker2 = pictures.Picture("sprites/worker/worker2_inv.png", [730 / 2.5,
 worker2 = pictures.Picture("sprites/worker/worker2.png", [730 / 2.5, 1330 / 2.5], [400, 830 - 1330 / 2.5])
 pygame.init()
 
-spisok_pictures = [place, worker_main, plus, coin, model.yellow_knopka, clock, model.green_knopka, model.worker3]
+spisok_pictures = [place, worker_main, plus, coin, model.yellow_knopka, clock, model.worker3, model.worker2]
 
 
 def main_view():
     for p in spisok_pictures:
         p.draw(dis)
     text1()
-    if model.lvl_worker2.chislo == 0:
-        obvodka_worker2.draw(dis)
-    else:
-        worker2.draw(dis)
     pygame.display.flip()
 
 

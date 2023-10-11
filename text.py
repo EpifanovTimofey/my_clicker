@@ -27,5 +27,5 @@ class Text:
 
     @chislo.setter
     def chislo(self, new):
-        self.a = self.shrift.render(self.text + str(int(new)), True, self.color_text, self.color_background)
+        self.a = self.shrift.render(self.text + str(int(new)) + self.text2, True, self.color_text, self.color_background)
         self.chislo1 = new
