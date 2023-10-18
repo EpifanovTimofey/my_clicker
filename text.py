@@ -14,6 +14,7 @@ class Text:
         self.chislo1 = chislo
         self.levo = levo
         self.x_ri = x_ri
+        # if self.chislo1//1000:
         self.a = self.shrift.render(self.text + str(int(self.chislo1)) + self.text2, True, self.color_text, self.color_background)
 
     def draw(self, dis):
