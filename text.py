@@ -19,22 +19,34 @@ class Text:
     def _draw_(self):
         self.a = self.shrift.render(self.text + str(int(self.chislo1)) + self.text2, True, self.color_text,
                                     self.color_background)
+        stroka = ""
+        o = self.chislo1
         if self.chislo1 >= 1000000:
             l = int(self.chislo1 // 1000000)
             l1 = int(self.chislo1 % 1000000)
+            l1 = str(l1)
             if l1 == "0":
                 l1 = ""
-            mln_str = str(l) + "M " + str(l1)
+            stroka = str(l) + "M "
+            mln_str = stroka
+            o = 0
+            if l1 != "":
+                o = l1
 
-        if self.chislo1 >= 1000:
-            l1 = int(self.chislo1 // 1000)
-            l2 = int(self.chislo1 % 1000)
-            l2 = str(l1)
+        if int(o) >= 1000:
+            l1 = int(int(o) // 1000)
+            l2 = int(int(o) % 1000)
+            l2 = str(l2)
             if l2 == "0":
                 l2 = ""
+            stroka = str(l1) + "K " + str(l2)
+            if self.chislo1 >= 1000000:
+                stroka = mln_str + str(l1) + "K " + str(l2)
 
-            stroka = mln_str + str(l1) + "K " + l2
-            self.a = self.shrift.render(self.text + stroka + self.text2, True, self.color_text,
+        if self.chislo1 < 1000:
+            stroka = str(int(self.chislo1))
+
+        self.a = self.shrift.render(self.text + stroka + self.text2, True, self.color_text,
                                         self.color_background)
 
     def draw(self, dis):
